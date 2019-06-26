@@ -27,7 +27,7 @@ script:
 addons:
   apt:
     sources:
-    - ubuntu-toolchain-r-test
+    - ubuntu-toolchain-r-test -y
     packages:
     - libjson-c-dev
     - libev-dev
@@ -35,9 +35,3 @@ addons:
     - libldb-dev
     - libtevent-dev
     - libcurl4-gnutls-dev
-
-
-
-
-
-
