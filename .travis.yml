@@ -18,6 +18,10 @@ script:
     - cpack
     - sudo dpkg -i *.deb
     - sudo systemctl start kelvin-node
+    - echo "DEBUGGING_INFO"
+    - ls -la /opt/kelvin-node
+    - whoami
+    - echo "END_OF_DEBUGGING_INFO"
     - /opt/kelvin-node/bin/kelvin-node-tool cert create cert0 sig_tesla
     - systemctl status kelvin-node
     - /opt/kelvin-node/bin/kelvin-node-cli wallet new -w wallet0
