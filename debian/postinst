@@ -40,9 +40,10 @@ else
 #    systemctl --system start $DAP_APP_NAME
 fi
     groupadd $DAP_CHAINS_NAME
-    usermod -aG $DAP_CHAINS_NAME `id -nu`
-    mkdir -p $DAP_PREFIX/var/{run,lib/ca,lib/wallet}
+    usermod -aG $DAP_CHAINS_NAME `id -nu 1000`
+    mkdir -p $DAP_PREFIX/var/{run,lib/ca,lib/wallet, lib/global_db}
     touch $DAP_PREFIX/var/run/kelvin-node.pid
     chown -R root:$DAP_CHAINS_NAME $DAP_PREFIX
+    chmod 0775 $DAP_PREFIX/var/{run,lib/ca,lib/wallet, lib/global_db}
     
 echo "For start $DAP_APP_NAME - run 'systemctl start $DAP_APP_NAME'"
