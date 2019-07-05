@@ -19,9 +19,8 @@ script:
     - sudo dpkg -i *.deb
     - sudo systemctl start kelvin-node
     - sudo systemctl status kelvin-node.service
-    - ls -laR /opt/kelvin-node
+#    - ls -laR /opt/kelvin-node
     - groups `users | awk '{print $1}'`
-    - sudo -i -u $(whoami)
     #Some manipulations to activate group may be required.
     - strace /opt/kelvin-node/bin/kelvin-node-tool cert create cert0 sig_tesla
     - /opt/kelvin-node/bin/kelvin-node-cli wallet new -w wallet0
