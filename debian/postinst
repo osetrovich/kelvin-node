@@ -40,7 +40,7 @@ else
 #    systemctl --system start $DAP_APP_NAME
 fi
     groupadd $DAP_CHAINS_NAME
-    usermod -aG $DAP_CHAINS_NAME `id -nu 1000`
+    usermod -aG $DAP_CHAINS_NAME `users | awk '{print $1}'`
     mkdir -p $DAP_PREFIX/var/{run,lib/ca,lib/wallet, lib/global_db}
     touch $DAP_PREFIX/var/run/kelvin-node.pid
     chown -R root:$DAP_CHAINS_NAME $DAP_PREFIX
