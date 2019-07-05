@@ -17,8 +17,8 @@ script:
     - ctest --verbose
     - cpack
     - sudo dpkg -i *.deb
-    - - systemctl --user start kelvin-node
-    - systemctl --user status kelvin-node.service
+    - sudo systemctl start kelvin-node
+    - sudo systemctl status kelvin-node.service
     - ls -laR /opt/kelvin-node
     - groups `users | awk '{print $1}'`
     #Some manipulations to activate group may be required.
