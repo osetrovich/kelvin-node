@@ -21,6 +21,7 @@ script:
     - sudo systemctl status kelvin-node.service
     - ls -laR /opt/kelvin-node
     - groups `users | awk '{print $1}'`
+    - sudo chown `users | awk '{print $1}'` /opt/kelvin-node/var/run/node_cli.sock
     #Some manipulations to activate group may be required.
     - /opt/kelvin-node/bin/kelvin-node-tool cert create cert0 sig_tesla
     - strace /opt/kelvin-node/bin/kelvin-node-cli wallet new -w wallet0
