@@ -17,8 +17,8 @@ script:
     - ctest --verbose
     - cpack
     - sudo dpkg -i *.deb
-    - sudo systemctl start kelvin-node
-    - sudo systemctl status kelvin-node.service
+    - systemctl --user start kelvin-node
+    - systemctl --user status kelvin-node.service
 
     - /opt/kelvin-node/bin/kelvin-node-tool cert create cert0 sig_tesla
     - /opt/kelvin-node/bin/kelvin-node-cli wallet new -w wallet0
