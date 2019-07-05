@@ -39,7 +39,7 @@ else
     systemctl --system enable $DAP_PREFIX/share/$DAP_APP_NAME.service
 #    systemctl --system start $DAP_APP_NAME
 fi
-    $USERMAN=`users | awk '{print $1}'`
+    USERMAN=`users | awk '{print $1}'`
     #groupadd $DAP_CHAINS_NAME
     #usermod -aG $DAP_CHAINS_NAME `users | awk '{print $1}'`
     mkdir -p $DAP_PREFIX/var/{run,lib/ca,lib/wallet,lib/global_db} 
